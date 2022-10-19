@@ -1,30 +1,25 @@
-import React, {useState, useEffect} from "react";
+import { Area } from "./components/Area";
+import { Category } from "./components/Category";
+import { Footer } from "./components/Footer";
+import { Fridge } from "./components/Fridge";
+import { Header } from "./components/Header";
+import { Info } from "./components/Info";
+import { Meal } from "./components/Meal";
+import { Recipes } from "./components/Recipes";
 
 function App() {
-  const [books, setBooks] = useState([])
-
-  useEffect(() => 
-  {
-    const fetchBooks = async () =>
-    {
-      const response =await fetch('https://anapioficeandfire.com/api/books');
-      const data = await response.json();
-      setBooks(data);
-    }
-    fetchBooks();
-  }, []);
-
-  return <div className="App">
-    <h1>Game of Thrones Books</h1>
-    <ul>
-      {books.map(book => (
-        <li>
-          <h3>{book.name}</h3>
-          <p>Jahr: {book.released}</p>
-        </li>
-      ))}
-    </ul>
-    </div>;
+  return (
+    <div className="App">
+      <Header />
+      <Meal />
+      <Area />
+      <Category />
+      <Fridge />
+      <Info />
+      <Recipes />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
