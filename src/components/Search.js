@@ -6,6 +6,7 @@ export const Search = () => {
       <form action="">
         <input type="text" />
         <input type="text" />
+        <button>Search</button>
       </form>
     </div>
   );
