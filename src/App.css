@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,27 +11,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0% 20%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h4 {
+  font-size:1rem;
+  color: rgb(56,56,56)
+}
+h3 {
+  font-size:1.5rem;
+  color: rgb(56,56,56);
+  line-height: 2.5rem;
+  margin: 2rem 0rem;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 1rem;
+h2 {
+  font-size:2rem;
+  color: rgb(56,56,56)
 }
 
-@media(max-width:800px){
-  .cards {
-    grid-template-columns: repeat(2,1fr);
-  }
+h1 {
+  font-size:2.5rem;
+  color: rgb(56,56,56)
 }
 
-@media (max-width: 500px){
-  .cards {
-    grid-template-columns: 1fr;
-  }
+p {
+  padding: 1rem
+}
+
+a {
+  color: rgb(56,56,56)
 }

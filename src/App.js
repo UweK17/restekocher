@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Recipes } from "./components/Recipes";
 import { Search } from "./components/Search";
 import Pages from "./pages/Pages";
 import "./App.css";
+import { Category } from "./components/Category";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Search />
-      <Pages />
-      <Recipes />
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Search />
+        <Category />
+        <Pages />
+        <Recipes />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };
