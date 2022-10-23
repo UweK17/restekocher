@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "name": "Hamburger",
+        "area": "American",
+        "category": "meat",
+        "ingredients": [
+            {
+                "0": "Meat",
+                "1": "Onions",
+                "2": "Salt"
+            }
+        ],
+        "amount": [
+            {
+                "0": 500,
+                "1": 1,
+                "2": 1
+            }
+        ],
+        "unit":[
+            {
+                "0": "g",
+                "1": "",
+                "2": "Tbsp"
+            }
+        ],
+        "image": "https://www.heimgourmet.com/media/155558582_crop.jpg/rh/hamburger.jpg",
+        "instructions": "ABCSDDJHDFKJDH"
+    }
+]
