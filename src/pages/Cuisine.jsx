@@ -22,8 +22,10 @@ export const Cuisine = () => {
         cuisine.meals.map((item) => {
           return (
             <Card key={item.idMeal}>
-              <img src={item.strMealThumb} alt={item.idMeal} />
-              <h4>{item.strMeal}</h4>
+              <Link to={"/recipe/" + item.idMeal}>
+                <img src={item.strMealThumb} alt={item.idMeal} />
+                <h4>{item.strMeal}</h4>
+              </Link>
             </Card>
           );
         })}
