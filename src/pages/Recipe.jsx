@@ -18,30 +18,59 @@ export const Recipe = () => {
   useEffect(() => {
     fetchDetails();
   }, [params.name]);
+
+  // let ingredientsArray = [];
+
+  // for (let i = 0; i <= 19; i++) {
+  //   if (details.meals[i].strIngredient[i+1]) {
+  //   ingredientsArray.push({ingredient: details.meals[i].strIngredient[i+1], measure: details.meals[i].strMeasure[i+1]});
+  //   console.log(ingredientsArray);
+  //   } else {
+  //   break;
+  //   }
+  //   } 
+
   return (
-    <DetailWrapper>
-      {details.meals && (
-        <>
-          <div>
-            <h2>{details.meals[0].strMeal}</h2>
-            <h3>{details.meals[0].strArea}</h3>
-            <img
-              src={details.meals[0].strMealThumb}
-              alt={details.meals[0].strMeal}
-            />
-          </div>
-          <Info>
-            <ul></ul>
-            <div>
-              {details.meals[0].strInstructions}
-              {/* <h3
-              dangerouslySetInnerHTML={{ __html: details.strInstructions }}
-            ></h3> */}
-            </div>
-          </Info>
-        </>
-      )}
-    </DetailWrapper>
+    <div className="card">
+      {details.meals && <div className="card-body">
+      <img
+        src={details.meals[0].strMealThumb}
+        className="card-img-top"
+        alt={details.meals[0].strMeal}
+      />
+      <h5 className="card-title">{details.meals[0].strMeal}</h5>
+      <p className="card-text">{details.meals[0].strArea}</p>
+      <p className="card-text">Ingredients:</p>
+      {/* <p className="card-text">{ingredientsArray}</p> */}
+      <p className="card-text">{details.meals[0].strInstructions}</p>
+      
+      <a href="#" className="card-link">zurück zur Hauptseite</a>
+      <a href="#" className="card-link">Another Link</a>
+      </div>}
+    </div>
+    // <DetailWrapper>
+    //   {details.meals && (
+    //     <>
+    //       <div>
+    //         <h2>{details.meals[0].strMeal}</h2>
+    //         <h3>{details.meals[0].strArea}</h3>
+    //         <img
+    //           src={details.meals[0].strMealThumb}
+    //           alt={details.meals[0].strMeal}
+    //         />
+    //       </div>
+    //       <Info>
+    //         <ul></ul>
+    //         <div>
+    //           {details.meals[0].strInstructions}
+    //           {/* <h3
+    //           dangerouslySetInnerHTML={{ __html: details.strInstructions }}
+    //         ></h3> */}
+    //         </div>
+    //       </Info>
+    //     </>
+    //   )}
+    // </DetailWrapper>
   );
 };
 
