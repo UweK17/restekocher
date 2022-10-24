@@ -7,7 +7,7 @@ export const Cuisine = () => {
   let params = useParams();
   const getCuisine = async (name) => {
     const data = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`
     );
     console.log("data:", data);
     const recipes = await data.json();
