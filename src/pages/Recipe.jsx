@@ -22,19 +22,27 @@ export const Recipe = () => {
   }, [params.name]);
   return (
     <DetailWrapper>
-      <div>
-        <h2>{details.strMeal}</h2>
-        <h3>{details.strArea}</h3>
-        <img src={details.strMealThumb} alt={details.strMeal} />
-      </div>
-      <Info>
-        <ul></ul>
-        <div>
-          <h3
-            dangerouslySetInnerHTML={{ __html: details.strInstructions }}
-          ></h3>
+      {
+        details.meals &&
+        <>
+          <div>
+          <h2>{details.meals[0].strMeal}</h2>
+          <h3>{details.meals[0].strArea}</h3>
+          <img src={details.meals[0].strMealThumb} alt={details.meals[0].strMeal} />
         </div>
-      </Info>
+        <Info>
+          <ul></ul>
+          <div>
+            {
+              details.meals[0].strInstructions
+            }
+            {/* <h3
+              dangerouslySetInnerHTML={{ __html: details.strInstructions }}
+            ></h3> */}
+          </div>
+        </Info>
+        </>
+      }
     </DetailWrapper>
   );
 };
