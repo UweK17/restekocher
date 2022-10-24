@@ -24,7 +24,6 @@ export const Random = () => {
 
     // localStorage.setItem("random", JSON.stringify(data.meals));
     setRandom(data.meals);
-    console.log(data.meals);
     // }
   };
   return (
