@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 
 export const Cuisine = () => {
-  const [cuisine, setCuisine] = useState([]);
+  const [cuisine, setCuisine] = useState({});
   let params = useParams();
   const getCuisine = async (name) => {
     const data = await fetch(
-      `www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
     );
     console.log("data:", data);
-    const recipes = await data.text();
+    const recipes = await data.json();
     console.log("recipes:", recipes);
-    setCuisine(recipes.results);
+    setCuisine(recipes);
   };
   useEffect(() => {
     getCuisine(params.type);
@@ -21,7 +21,7 @@ export const Cuisine = () => {
 
   return (
     <Grid>
-      {cuisine.map((item) => {
+      {cuisine.meals && cuisine.meals.map((item) => {
         return (
           <Card key={item.idMeal}>
             <img src={item.strMealThumb} alt={item.idMeal} />
