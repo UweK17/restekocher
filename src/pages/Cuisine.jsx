@@ -7,9 +7,11 @@ export const Cuisine = () => {
   let params = useParams();
   const getCuisine = async (name) => {
     const data = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`
+      `www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`
     );
-    const recipes = await data.json();
+    console.log("data:", data);
+    const recipes = await data.text();
+    console.log("recipes:", recipes);
     setCuisine(recipes.results);
   };
   useEffect(() => {

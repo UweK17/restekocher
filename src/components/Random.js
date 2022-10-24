@@ -13,19 +13,19 @@ export const Random = () => {
   }, []);
 
   const getRandom = async () => {
-    const check = localStorage.getItem("random");
-    if (check) {
-      setRandom(JSON.parse(check));
-    } else {
-      const api = await fetch(
-        "https://www.themealdb.com/api/json/v1/1/random.php"
-      );
-      const data = await api.json();
+    // const check = localStorage.getItem("random");
+    // if (check) {
+    //   setRandom(JSON.parse(check));
+    // } else {
+    const api = await fetch(
+      "https://www.themealdb.com/api/json/v1/1/random.php"
+    );
+    const data = await api.json();
 
-      localStorage.setItem("random", JSON.stringify(data.meals));
-      setRandom(data.meals);
-      console.log(data.meals);
-    }
+    // localStorage.setItem("random", JSON.stringify(data.meals));
+    setRandom(data.meals);
+    console.log(data.meals);
+    // }
   };
   return (
     <div>

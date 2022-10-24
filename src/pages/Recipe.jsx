@@ -9,10 +9,12 @@ export const Recipe = () => {
   const [details, setDetails] = useState({});
 
   const fetchDetails = async () => {
+    console.log("params.name:", params.name);
     const data = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.name}/information`
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.name}`
     );
     const detailData = await data.json();
+    console.log("detailData:", detailData);
     setDetails(detailData);
   };
   useEffect(() => {
