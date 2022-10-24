@@ -5,3 +5,6 @@
   border: none;
   border-radius: 10px;
 }
+.card-text{
+  white-space: pre-line;
+}
