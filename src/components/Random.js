@@ -27,7 +27,7 @@ export const Random = () => {
     // }
   };
   return (
-    <div>
+    <div className="text-center">
       {random.map((meal) => {
         return (
           <Wrapper key={meal.idMeal}>

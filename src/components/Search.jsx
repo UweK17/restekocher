@@ -30,7 +30,7 @@ export const Search = () => {
 };
 
 const FormStyle = styled.form`
-  margin: 0rem 20rem;
+  margin: auto;
   position: relative;
   width: 100%;
   div {
