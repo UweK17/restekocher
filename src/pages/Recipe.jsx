@@ -9,7 +9,6 @@ export const Recipe = () => {
   const [details, setDetails] = useState({});
 
   const fetchDetails = async () => {
-    console.log("params.name:", params.name);
     const data = await fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.name}`
     );
@@ -22,27 +21,27 @@ export const Recipe = () => {
   }, [params.name]);
   return (
     <DetailWrapper>
-      {
-        details.meals &&
+      {details.meals && (
         <>
           <div>
-          <h2>{details.meals[0].strMeal}</h2>
-          <h3>{details.meals[0].strArea}</h3>
-          <img src={details.meals[0].strMealThumb} alt={details.meals[0].strMeal} />
-        </div>
-        <Info>
-          <ul></ul>
-          <div>
-            {
-              details.meals[0].strInstructions
-            }
-            {/* <h3
+            <h2>{details.meals[0].strMeal}</h2>
+            <h3>{details.meals[0].strArea}</h3>
+            <img
+              src={details.meals[0].strMealThumb}
+              alt={details.meals[0].strMeal}
+            />
+          </div>
+          <Info>
+            <ul></ul>
+            <div>
+              {details.meals[0].strInstructions}
+              {/* <h3
               dangerouslySetInnerHTML={{ __html: details.strInstructions }}
             ></h3> */}
-          </div>
-        </Info>
+            </div>
+          </Info>
         </>
-      }
+      )}
     </DetailWrapper>
   );
 };

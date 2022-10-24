@@ -8,26 +8,25 @@ export const Searched = () => {
   let params = useParams();
   const getSearched = async (ingredient) => {
     const data = await fetch(
-      `https://www.themealdb.com/api/json/v1/1/filter.php?i=Salt`
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
     );
     const recipes = await data.json();
-    console.log(recipes);
     setSearched(recipes);
   };
   useEffect(() => {
-    getSearched(params.search);
-  }, [params.search]);
-  console.log(search);
+    getSearched(params.searched);
+  }, [params.searched]);
   return (
     <Grid>
-      {search.meals && search.meals.map((item) => {
-        return (
-          <Card key={item.idMeal}>
-            <img src={item.strMealThumb} alt={item.strMeal} />
-            <h4>{item.strMeal}</h4>
-          </Card>
-        )
-      })}
+      {search.meals &&
+        search.meals.map((item) => {
+          return (
+            <Card key={item.idMeal}>
+              <img src={item.strMealThumb} alt={item.strMeal} />
+              <h4>{item.strMeal}</h4>
+            </Card>
+          );
+        })}
     </Grid>
   );
 };
