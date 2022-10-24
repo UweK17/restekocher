@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import './recipe.css';
 
 import React from "react";
 
@@ -19,16 +20,21 @@ export const Recipe = () => {
     fetchDetails();
   }, [params.name]);
 
-  // let ingredientsArray = [];
+  const navigate = useNavigate();
+  const handleClick = () => 
+  {
+    navigate('/', {replace: true});
+  };
+//________LOOOOOP________________________________________________________________
+ 
+// if(details.meals[0].strIngredient1 !== "")
+//   {
+//     const ing1= details.meals[0].strIngredient1;
+//     console.log(ing1);
+//     return ing1;
+//   }
 
-  // for (let i = 0; i <= 19; i++) {
-  //   if (details.meals[i].strIngredient[i+1]) {
-  //   ingredientsArray.push({ingredient: details.meals[i].strIngredient[i+1], measure: details.meals[i].strMeasure[i+1]});
-  //   console.log(ingredientsArray);
-  //   } else {
-  //   break;
-  //   }
-  //   } 
+//________LOOOOOP________________________________________________________________
 
   return (
     <div className="card">
@@ -38,14 +44,16 @@ export const Recipe = () => {
         className="card-img-top"
         alt={details.meals[0].strMeal}
       />
-      <h5 className="card-title">{details.meals[0].strMeal}</h5>
-      <p className="card-text">{details.meals[0].strArea}</p>
-      <p className="card-text">Ingredients:</p>
-      {/* <p className="card-text">{ingredientsArray}</p> */}
-      <p className="card-text">{details.meals[0].strInstructions}</p>
+      <h3 className="card-title">{details.meals[0].strMeal}</h3>
+      <div className="card-text">Area: {details.meals[0].strArea}</div>
+      <h3 className="card-text">Ingredients:</h3>
+      <h3>Instructions:</h3>
+      <div className="card-text">{details.meals[0].strInstructions}</div>
       
-      <a href="#" className="card-link">zurück zur Hauptseite</a>
-      <a href="#" className="card-link">Another Link</a>
+      <div className="d-flex justify-content-between">
+        <button className="recipeButton" onClick={handleClick}>Back to Main</button>
+        <button className="recipeButton">Infinity</button>
+      </div>
       </div>}
     </div>
     // <DetailWrapper>
@@ -74,21 +82,21 @@ export const Recipe = () => {
   );
 };
 
-const DetailWrapper = styled.div`
-  margin-top: 10rem;
-  margin-bottom: 5rem;
-  display: flex;
-  h2 {
-    margin-bottom: 2rem;
-  }
-  li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
-  }
-  ul {
-    margin-top: 2rem;
-  }
-`;
-const Info = styled.div`
-  margin-left: 10rem;
-`;
+// const DetailWrapper = styled.div`
+//   margin-top: 10rem;
+//   margin-bottom: 5rem;
+//   display: flex;
+//   h2 {
+//     margin-bottom: 2rem;
+//   }
+//   li {
+//     font-size: 1.2rem;
+//     line-height: 2.5rem;
+//   }
+//   ul {
+//     margin-top: 2rem;
+//   }
+// `;
+// const Info = styled.div`
+//   margin-left: 10rem;
+// `;

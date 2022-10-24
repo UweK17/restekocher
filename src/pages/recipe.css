@@ -1,0 +1,7 @@
+.recipeButton
+{
+  background: linear-gradient(to bottom,#3de2d8, #00acf9);
+  width: 40%;
+  border: none;
+  border-radius: 10px;
+}
