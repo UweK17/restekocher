@@ -1,0 +1,27 @@
+.footer
+{
+  background: linear-gradient(to bottom,#3de2d8, #00acf9);
+}
+
+.footerButton
+{
+  width: 30%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(35deg, #494949, #313131);
+  color: white;
+}
+
+.tooltip
+{
+  height: 90vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 5rem;
+}
+
+#target
+{
+  width: 100vw;
+  height: 0px;
+}
