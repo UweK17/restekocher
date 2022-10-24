@@ -9,26 +9,24 @@ export const Cuisine = () => {
     const data = await fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`
     );
-    console.log("data:", data);
     const recipes = await data.json();
-    console.log("recipes:", recipes);
     setCuisine(recipes);
   };
   useEffect(() => {
     getCuisine(params.type);
-    console.log(params.type);
   }, [params.type]);
 
   return (
     <Grid>
-      {cuisine.meals && cuisine.meals.map((item) => {
-        return (
-          <Card key={item.idMeal}>
-            <img src={item.strMealThumb} alt={item.idMeal} />
-            <h4>{item.strMeal}</h4>
-          </Card>
-        );
-      })}
+      {cuisine.meals &&
+        cuisine.meals.map((item) => {
+          return (
+            <Card key={item.idMeal}>
+              <img src={item.strMealThumb} alt={item.idMeal} />
+              <h4>{item.strMeal}</h4>
+            </Card>
+          );
+        })}
     </Grid>
   );
 };

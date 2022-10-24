@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-export const Search = (ingredients) => {
+export const Search = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const submitHandler = (e) => {

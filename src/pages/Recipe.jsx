@@ -13,7 +13,6 @@ export const Recipe = () => {
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.name}`
     );
     const detailData = await data.json();
-    console.log("detailData:", detailData);
     setDetails(detailData);
   };
   useEffect(() => {
