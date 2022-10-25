@@ -22,7 +22,6 @@ export const Search = () => {
             type="text"
             value={input}
           />
-          <h1>{input}</h1>
         </div>
       </FormStyle>
     </div>

@@ -68,7 +68,7 @@
     font-size: 1.5rem;
   }
   .active {
-    background: linear-gradient(to right, #00acf9, #3de2d8);
+    background: linear-gradient(to top, #00acf9, #3de2d8);
     
   }
   .active svg {
@@ -108,7 +108,7 @@
     font-size: 2rem;
   }
   .active {
-    background: linear-gradient(to right, #00acf9, #3de2d8);
+    background: linear-gradient(to top, #00acf9, #3de2d8);
     
   }
   .active svg {
