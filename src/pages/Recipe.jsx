@@ -37,23 +37,24 @@ export const Recipe = () => {
 
   //________LOOOOOP__________________________________________2______________________
 
-  // let ingredientsArray = [];
-
-  // for (let i = 1; i <= 20; i++) {
-  //   if (details.meals[0][`strIngredient${[i]}`]) {
-  //     ingredientsArray.push({
-  //       measure: details.meals[0][`strMeasure${[i]}`],
-  //       ingredients: details.meals[0][`strIngredient${[i]}`],
-  //     });
-  //   } else {
-  //     break;
-  //   }
-  // }
-  // console.log("ingredientsArray: ", ingredientsArray);
+  let ingredientsArray = [];
+  if ("meals" in details) {
+    for (let i = 1; i <= 20; i++) {
+      if (details.meals[0][`strIngredient${[i]}`]) {
+        ingredientsArray.push({
+          measure: details.meals[0][`strMeasure${[i]}`],
+          ingredients: details.meals[0][`strIngredient${[i]}`],
+        });
+      } else {
+        break;
+      }
+    }
+  }
+  console.log("ingredientsArray:", ingredientsArray);
 
   //________LOOOOOP__________________________________________2______________________
   return (
-    <div className="card" key={details.idMeal}>
+    <div className="card">
       {details.meals && (
         <div className="card-body">
           <img
