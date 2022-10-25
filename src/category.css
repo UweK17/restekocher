@@ -9,8 +9,85 @@
   justify-content: center;
   margin: 2rem 0rem;
   }
-  NavLink {
+  .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+  text-decoration: none;
+  background: linear-gradient(35deg, #494949, #313131);
+  width: 2.7rem;
+  height: 2.7rem;
+  cursor: pointer;
+  }
+  .icon h4 {
+    color: white;
+    font-size: 0.5rem;
+  }
+  .icon svg {
+    color: white;
+    font-size: 1.1rem;
+  }
+  .active {
+    background: linear-gradient(to top, #00acf9, #3de2d8);
+    
+  }
+  .active svg {
+    color: white;
+  }
+  .active h4 {
+    color: white;
+  }
+ @media screen and (min-width: 769px){
+  .icons {
     display: flex;
+  justify-content: center;
+  margin: 2rem 0rem;
+  }
+  .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  text-decoration: none;
+  background: linear-gradient(35deg, #494949, #313131);
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: pointer;
+  }
+  .icon h4 {
+    color: white;
+    font-size: 0.6rem;
+  }
+  .icon svg {
+    color: white;
+    font-size: 1.5rem;
+  }
+  .active {
+    background: linear-gradient(to right, #00acf9, #3de2d8);
+    
+  }
+  .active svg {
+    color: white;
+  }
+  .active h4 {
+    color: white;
+  }
+ }
+
+  @media screen and (min-width:1024px) {
+    
+  .icons {
+    display: flex;
+  justify-content: center;
+  margin: 2rem 0rem;
+  }
+  .icon {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -22,11 +99,11 @@
   height: 4.7rem;
   cursor: pointer;
   }
-  NavLink h4 {
+  .icon h4 {
     color: white;
     font-size: 0.9rem;
   }
-  NavLink svg {
+  .icon svg {
     color: white;
     font-size: 2rem;
   }
@@ -39,4 +116,5 @@
   }
   .active h4 {
     color: white;
-  } 
+  }
+    }
