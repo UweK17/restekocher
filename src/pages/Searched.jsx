@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Searched = () => {
@@ -22,8 +22,10 @@ export const Searched = () => {
         search.meals.map((item) => {
           return (
             <Card key={item.idMeal}>
-              <img src={item.strMealThumb} alt={item.strMeal} />
-              <h4>{item.strMeal}</h4>
+              <Link to={"/recipe/" + item.idMeal}>
+                <img src={item.strMealThumb} alt={item.strMeal} />
+                <h4>{item.strMeal}</h4>
+              </Link>
             </Card>
           );
         })}
