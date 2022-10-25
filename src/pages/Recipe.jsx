@@ -65,7 +65,27 @@ export const Recipe = () => {
           <h3 className="card-title">{details.meals[0].strMeal}</h3>
           <div className="card-text">Area: {details.meals[0].strArea}</div>
           <h3 className="card-text">Ingredients:</h3>
-          {/* <div className="card-text">{ingredientsArray}</div> */}
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Measure</th>
+                <th scope="col">Ingredient</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              {ingredientsArray.map((ingredient) =>
+            (
+            <tr>
+              <td>{ingredient.measure}</td>
+              <td>{ingredient.ingredients}</td>
+            </tr>
+            )
+            )}
+              
+            </tbody>
+          </table>
+
           <h3>Instructions:</h3>
           <div className="card-text">{details.meals[0].strInstructions}</div>
 

@@ -9,3 +9,19 @@
 .card-text{
   white-space: pre-line;
 }
+
+th
+{
+  background: linear-gradient(35deg, #494949, #313131);
+  color: white;
+}
+
+tr:nth-child(odd)
+{
+  background-color: #3de2d8;
+}
+
+tr:nth-child(even)
+{
+  background-color: #00acf9;
+}
